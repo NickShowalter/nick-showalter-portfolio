@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ========================================
+     LIGHT MODE - Clean & Professional
+     ======================================== */
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 201 96% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 201 80% 92%;
+    --accent-foreground: 201 96% 32%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 201 96% 32%;
+    --radius: 0.75rem;
+  }
+
+  /* ========================================
+     DARK MODE - Modern & Sleek
+     ======================================== */
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 6%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 224 71% 4%;
+    --secondary: 215 28% 12%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 215 28% 12%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 215 28% 16%;
+    --accent-foreground: 199 89% 48%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 213 31% 91%;
+    --border: 215 28% 16%;
+    --input: 215 28% 16%;
+    --ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ========================================
+   BACKGROUND STYLING
+   ======================================== */
+
+/* Light mode - clean subtle gradient */
+:root body {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 197, 0.08), transparent),
+    hsl(0 0% 98%);
+}
+
+/* Dark mode - deep with subtle gradient */
+.dark body {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 197, 0.15), transparent),
+    linear-gradient(180deg, hsl(224 71% 4%) 0%, hsl(224 71% 6%) 100%);
+}
+
+/* ========================================
+   TYPOGRAPHY & ACCENT STYLES
+   ======================================== */
+
+/* Heading accent - works in both modes */
+.neon-text {
+  @apply text-primary font-bold;
+}
+
+/* Light mode accent text */
+:root .neon-text {
+  background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark mode accent text */
+.dark .neon-text {
+  background: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   BUTTON & INTERACTIVE ELEMENTS
+   ======================================== */
+
+/* Primary button glow */
+.glow {
+  @apply shadow-lg;
+  transition: all 0.3s ease;
+}
+
+:root .glow {
+  box-shadow: 
+    0 4px 14px rgba(14, 165, 233, 0.25),
+    0 2px 6px rgba(14, 165, 233, 0.15);
+}
+
+:root .glow:hover {
+  box-shadow: 
+    0 6px 20px rgba(14, 165, 233, 0.35),
+    0 4px 10px rgba(14, 165, 233, 0.25);
+}
+
+.dark .glow {
+  box-shadow: 
+    0 4px 14px rgba(34, 211, 238, 0.2),
+    0 2px 6px rgba(34, 211, 238, 0.1);
+}
+
+.dark .glow:hover {
+  box-shadow: 
+    0 6px 20px rgba(34, 211, 238, 0.3),
+    0 4px 10px rgba(34, 211, 238, 0.2);
+}
+
+/* ========================================
+   CARD STYLING
+   ======================================== */
+
+:root .bg-card {
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.dark .bg-card {
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   COLOR ACCENT OVERRIDES
+   ======================================== */
+
+/* Light mode accent colors */
+:root .text-neon-blue { color: #0891b2; }
+:root .text-neon-cyan { color: #06b6d4; }
+:root .text-neon-azure { color: #0ea5e9; }
+
+/* Dark mode accent colors */
+.dark .text-neon-blue { color: #22d3ee; }
+.dark .text-neon-cyan { color: #67e8f9; }
+.dark .text-neon-azure { color: #38bdf8; }
+
+/* Gradient overrides for buttons */
+:root .from-neon-blue { --tw-gradient-from: #0891b2; }
+:root .via-neon-cyan { --tw-gradient-stops: var(--tw-gradient-from), #06b6d4, var(--tw-gradient-to); }
+:root .to-neon-azure { --tw-gradient-to: #0ea5e9; }
+
+.dark .from-neon-blue { --tw-gradient-from: #22d3ee; }
+.dark .via-neon-cyan { --tw-gradient-stops: var(--tw-gradient-from), #67e8f9, var(--tw-gradient-to); }
+.dark .to-neon-azure { --tw-gradient-to: #38bdf8; }
+
+/* ========================================
+   SECTION BACKGROUNDS - Simplified
+   ======================================== */
+
+/* Override section gradients for cleaner look */
+:root .from-background { --tw-gradient-from: hsl(0 0% 98%); }
+:root .to-background { --tw-gradient-to: hsl(0 0% 98%); }
+:root .from-secondary\/50 { --tw-gradient-from: hsl(210 20% 94% / 0.5); }
+:root .to-secondary\/50 { --tw-gradient-to: hsl(210 20% 94% / 0.5); }
+
+.dark .from-background { --tw-gradient-from: hsl(224 71% 4%); }
+.dark .to-background { --tw-gradient-to: hsl(224 71% 4%); }
+.dark .from-secondary\/50 { --tw-gradient-from: hsl(215 28% 12% / 0.5); }
+.dark .to-secondary\/50 { --tw-gradient-to: hsl(215 28% 12% / 0.5); }
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.parallax {
+  transition: transform 0.1s ease-out;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
