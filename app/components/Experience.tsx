@@ -4,36 +4,29 @@ import { motion } from "framer-motion"
 
 const experiences = [
   {
-    title: "IT Business Systems Analyst",
+    title: "Analytics Engineer",
     company: "Marathon Petroleum Corporation",
-    date: "March 2025 – Present",
+    date: "February 2025 – Present",
     description:
       "Led the architecture and design of an SAP S/4HANA MM supply chain data pipeline into Azure with medallion architecture. Designed analytics-ready star schemas for Power BI enterprise reports, enabling standardized KPIs and saving 13,000 hours. Rebuilt data architecture for legacy .NET applications and delivered AI capability presentations for Supply Chain leadership.",
   },
   {
     title: "Data Engineer",
     company: "BMS Technologies",
-    date: "May 2024 – March 2025",
+    date: "February 2024 – February 2025",
     description:
       "Developed comprehensive analytics roadmaps, implemented scalable data models and ETL pipelines, and enhanced data accuracy by reducing error rates.",
   },
   {
     title: "Senior Data Analyst",
     company: "Whitewater Midstream LLC",
-    date: "January 2023 – March 2024",
+    date: "January 2022 – February 2024",
     description:
       "Worked with enterprise data teams to rationalize data objects, eliminate redundancy, and optimize data pipeline workflows. Created and maintained data dictionaries and metadata catalogs. Partnered with stakeholders to define KPIs and implement data structures that improve decision-making efficiency.",
   },
   {
-    title: "Data Analyst (Contract)",
-    company: "Whole Foods Inc",
-    date: "January 2022 – January 2023",
-    description:
-      "Designed and deployed interactive Tableau dashboards and SQL-based reports to track marketing and regional supply chain performance. Conducted data validation and quality assurance. Defined and refined data models for operational analysis, improving reporting efficiency and decision-making.",
-  },
-  {
     title: "Data Analyst",
-    company: "Radcat Design & Inbound Fit",
+    company: "Inbound Fit",
     date: "June 2019 – January 2022",
     description:
       "Developed Power BI and Tableau dashboards for monitoring KPIs and user behavior. Built automated data workflows, reducing manual errors and enhancing efficiency by 60%. Worked closely with business teams to improve reporting accuracy and optimize customer acquisition strategies.",
